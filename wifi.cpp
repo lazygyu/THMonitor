@@ -3,6 +3,7 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 #include <WiFiClient.h>
+#include "constants.h"
 
 class WifiModule {
 	public:
@@ -26,7 +27,7 @@ class WifiModule {
 	private:
 		void connect() {
 			WiFi.mode(WIFI_STA);
-			WiFi.begin(ssid, password);
+			WiFi.begin(MY_SSID, MY_PASSWORD);
 
 			while(WiFi.status() != WL_CONNECTED) {
 				delay(500);
